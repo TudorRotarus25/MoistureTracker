@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tudor's moisture report</title>
+    {% load static %}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- Theme styles -->
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!--Mask-->
+    <div class="view hm-black-strong">
+        <div class="full-bg-img flex-center">
+            <ul>
+                <li>
+                    <h1 class="h1-responsive wow fadeInDown" data-wow-delay="0.2s">Current room status</h1></li>
+                <li>
+                    <p class="wow fadeInDown">Temperature: {{ latest_report.temperature }} / Moisture {{ latest_report.moisture_level }} %</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/.Mask-->
+
+    <!-- Main container-->
+    <div class="container">
+
+        <div class="divider-new">
+            <h2 class="h2-responsive wow bounceIn">About us</h2>
+        </div>
+
+        <!--Section: About-->
+        <section id="about" class="text-xs-center wow bounceIn" data-wow-delay="0.2s">
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit explicabo assumenda eligendi ex exercitationem harum deleniti quaerat beatae ducimus dolor voluptates magnam, reiciendis pariatur culpa tempore quibusdam quidem, saepe eius.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit explicabo assumenda eligendi ex exercitationem harum deleniti quaerat beatae ducimus dolor voluptates magnam, reiciendis pariatur culpa tempore quibusdam quidem, saepe eius.</p>
+
+        </section>
+        <!--Section: About-->
+
+        <div class="divider-new">
+            <h2 class="h2-responsive wow fadeInDown">Moisture Chart</h2>
+        </div>
+
+        <!--Section: Moisture Chart-->
+        <section id="moisture-chart">
+
+            <div class="row">
+                <div class="col-lg-10 offset-1">
+                    <!--Card-->
+                    <div class="card wow fadeInUp">
+
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(3).jpg" class="img-fluid" alt="">
+                            <a>
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+
+                        <!--Card content-->
+                        <div class="card-block text-xs-center">
+                            <!--Title-->
+                            <h4 class="card-title">Card title</h4>
+                            <hr>
+                            <!--Text-->
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident fuga animi architecto dolores dicta cum quo velit.</p>
+                        </div>
+                        <!--/.Card content-->
+
+                        {% block content %}
+                        {% endblock %}
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+            </div>
+
+        </section>
+        <!--/Section: Moisture Chart -->
+
+        <div class="divider-new">
+            <h2 class="h2-responsive wow fadeInUp">Contact us</h2>
+        </div>
+
+    </div>
+    <!--/ Main container-->
+
+
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <hr>
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{% static 'js/tether.min.js' %}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+</body>
+</html>

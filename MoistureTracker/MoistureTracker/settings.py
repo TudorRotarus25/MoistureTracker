@@ -25,12 +25,16 @@ SECRET_KEY = 'u0l^7%ut=$=4&6+o(s94h!+j=vb2eguh!ieebmis5#*(@gu_b2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '192.168.0.168',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'moisture.apps.MoistureConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +79,12 @@ WSGI_APPLICATION = 'MoistureTracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'moisture_tracker',
+        'USER': 'root',
+        'PASSWORD': 'adminadmin',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
