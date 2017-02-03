@@ -81,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'moisture_tracker',
-        'USER': 'root',
-        'PASSWORD': 'adminadmin',
+        'USER': 'raspberry',
+        'PASSWORD': 'jso4njpslar@4',
         'HOST': 'localhost',
         'PORT': '3306',
     }
