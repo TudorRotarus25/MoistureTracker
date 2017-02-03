@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '192.168.0.168',
+    '192.168.0.106',
 ]
 
 
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'MoistureTracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'moisture_tracker',
+        'NAME': 'moisture_tracking',
         'USER': 'raspberry',
         'PASSWORD': 'jso4njpslar@4',
         'HOST': 'localhost',
