@@ -21,7 +21,7 @@ class HomepageView(LayoutView):
         labels = []
         temperature = []
         moisture_level = []
-        last_ten = MoistureAndTemperatureReport.objects.all().order_by('-reported_at')[:10]
+        last_ten = MoistureAndTemperatureReport.objects.order_by('-reported_at')[:10]
         last_ten = last_ten.reverse()
 
         for report in last_ten:
