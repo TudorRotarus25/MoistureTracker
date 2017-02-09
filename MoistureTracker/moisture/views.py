@@ -25,7 +25,7 @@ class HomepageView(LayoutView):
         last_ten = last_ten.reverse()
 
         for report in last_ten:
-            labels.append(report.reported_at.strftime('%H:%M'))
+            labels.append(report.reported_at.strftime('%-d %b %H:%M'))
             temperature.append(report.temperature)
             moisture_level.append(report.moisture_level)
 
