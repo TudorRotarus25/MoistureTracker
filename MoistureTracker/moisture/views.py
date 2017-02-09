@@ -17,10 +17,26 @@ class LayoutView(View):
 class HomepageView(LayoutView):
     template_name = 'moisture/homepage.html'
 
+    def get_last_reports(self):
+        labels = []
+        temperature = []
+        moisture_level = []
+        last_ten = MoistureAndTemperatureReport.objects.all().order_by('-reported_at')[:10]
+        last_ten = last_ten.reverse()
+
+        for report in last_ten:
+            labels.append(report.reported_at.strftime('%H:%M'))
+            temperature.append(report.temperature)
+            moisture_level.append(report.moisture_level)
+
+        return {'labels': labels, 'temperature': temperature, 'moisture_level': moisture_level}
+
     def get(self, request):
-        context = {}
-        context['last_report'] = self.get_most_recent_report()
-        return render(request, self.template_name, {'latest_report': self.get_most_recent_report()})
+        context = {
+            'latest_report': self.get_most_recent_report(),
+            'report_chart_data': self.get_last_reports(),
+        }
+        return render(request, self.template_name, context)
 
 
 class MoistureChartView(LayoutView):

@@ -49,3 +49,7 @@ footer.page-footer {
     margin-bottom: 1rem;
     color: #1C2331;
 }
+
+div.chart {
+    padding: 30px;
+}
